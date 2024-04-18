@@ -46,7 +46,7 @@ print(filename.removesuffix(".txt"))
 #3-1. Names: Store the names of a few of your friends in a list called names. 
 #Print each person’s name by accessing each element in the list, one at a time.
 
-names:str=["Sanji","Cristian","Pietro","Mattia"]
+names:str=["Gabriele","Cristian","Pietro","Mattia"]
 print(names[0])
 print(names[1])
 print(names[2])
@@ -58,6 +58,9 @@ print(f"{names[0]} Sei stato invitato alla festa.")
 print(f"{names[1]} Sei stato invitato alla festa.")
 print(f"{names[2]} Sei stato invitato alla festa.")
 print(f"{names[3]} Sei stato invitato alla festa.")
+
+#3-3. Your Own List: Think of your favorite mode of transportation, such as a motorcycle or a car, and make a list that stores several examples. 
+#Use your list to print a series of statements about these items, such as “I would like to own a Honda motorcycle.”
 
 
 
