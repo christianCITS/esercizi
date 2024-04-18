@@ -31,11 +31,21 @@ print ("Giuseppe Ungaretti una volta disse:"  ' "Mi illumino di immenso."')
 #2-6. Famous Quote 2: Repeat Exercise 2-5, but this time, represent the famous person’s name using a variable called 
 #famous_person. Then compose your message and represent it with a new variable called message. Print your message. 
 
+
+#this variables contains the name and the quote 
 famous_person: str="Giuseppe Ungaretti"
 message:str=' "Mi illumino di immenso."'
 
-
 print(f"{famous_person} una volta disse{message}")
+
+#2-8. File Extensions: Python has a removesuffix() method that works exactly like removeprefix(). Assign the value 'python_notes.txt' to a variable called filename. 
+#Then use the removesuffix() method to display the filename without the file extension, like some file browsers do.
+filename:str='python_notes.txt'
+print(filename.removesuffix(".txt"))
+
+
+
+
 
 
 
