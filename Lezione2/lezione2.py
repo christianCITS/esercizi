@@ -8,26 +8,36 @@ print("Hello World")
 
 #this variable contain a name
 a:str="Claudio"
-print("hello" , a , "Would you like to learn...")
+print(f"hello {a} Would you like to learn...")
+
+
+#2-4. Name Cases: Use a variable to represent a person’s name, and then print that person’s name 
+#in lowercase, uppercase, and title case.
 
 #this variable contain a name
 b="Antonio"
-print(b.lower(),b.upper(),b.title())
- 
+#this variables contains the the same name in: lower,upper,title
+b_lower:str=b.lower()
+b_upper:str=b.upper()
+b_title:str=b.title()
+print(b_lower,b_upper,b_title)
+#2-5. Famous Quote: Find a quote from a famous person you admire. Print the quote and the name of its author. 
+#Your output should look something like the following, including the quotation marks: Albert Einstein once said, “A person who never made a mistake
+# never tried anything new.”
 
 print ("Giuseppe Ungaretti una volta disse:"  ' "Mi illumino di immenso."')
 
 
+#2-6. Famous Quote 2: Repeat Exercise 2-5, but this time, represent the famous person’s name using a variable called 
+#famous_person. Then compose your message and represent it with a new variable called message. Print your message. 
 
 famous_person: str="Giuseppe Ungaretti"
 message:str=' "Mi illumino di immenso."'
 
 
-print(famous_person ,"una volta disse:",message)
+print(f"{famous_person} una volta disse{message}")
 
 
 
-filename='python_notes.txt'
-filename.removesuffix()
-print(filename)
+
 
