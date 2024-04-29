@@ -73,7 +73,13 @@ num_disp:list[int]=[i for i in range(1,21,2)]
 print(num_disp)
 
 
+#4-7. Threes: Make a list of the multiples of 3, from 3 to 30. Use a for loop to print the numbers in your list.
+multipli3:list[int]=[index for index in range(3,33,3)]
+print(multipli3)
 
+
+
+#
 
 
 
