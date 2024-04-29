@@ -36,3 +36,14 @@ for a in animals:
 
 
 print(f"Sia il {animals[0]} che il {animals[3]} fanno parte della famiglia dei canidi, mentre il {animals[1]} e la {animals[2]} fanno parte della famiglia dei felini!")
+
+
+
+
+#4-3. Counting to Twenty: Use a for loop to print the numbers from 1 to 20, inclusive.
+
+for i in range(1,21):
+    print (i)
+
+
+
