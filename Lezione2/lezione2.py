@@ -294,12 +294,33 @@ for k,v in cities.items():
 
 
 
-    #6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
+
+
+
+
+
+
+
+#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
     #Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
     #or improving the formatting of the output.
     
 
-    
+#aggiungo altre info al dizionario, lo converto in due liste (chiavi,valori) e stampo in  output il numero preferito della prima e dell'ultima persona formattando la stringa
+num_fort:dict={"Filippo":7,"Alberto":10,"Mario":57,"Pasquale":17,"Massimo":68,"Alessandro":19}
+num_fortch=list[str](num_fort.keys())
+num_fortva=list[int](num_fort.values())
+print(f"Il numero preferito di {num_fortch[0]} è: {num_fortva[0]}. \nmentre quello di {num_fortch[-1]} è: {num_fortva[-1]}.")
+
+
+
+
+
+
+
+
+
+
 
 
 
