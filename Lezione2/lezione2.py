@@ -33,7 +33,7 @@ print ("Giuseppe Ungaretti una volta disse:"  ' "Mi illumino di immenso."')
 
 
 #this variables contains the name and the quote 
-famous_person: str="Giuseppe Ungaretti"
+famous_person:str="Giuseppe Ungaretti"
 message:str=' "Mi illumino di immenso."'
 
 print(f"{famous_person} una volta disse{message}")
@@ -282,8 +282,24 @@ print(num_fort)
 #6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, 
 #and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
 
+cities:dict={"Lugano":{"population":"approx.60.000","country":"Svizzera","fact":"Lugano è famosa per i suoi istituti bancari"},
+             "Roma":{"population":"approx.2.000.000","country":"Italia","fact":"Roma è una delle città più antiche del mondo."},
+             "Tokyo":{"population":"approx.14.000.000","country":"Giappone","fact":"Tokyo è una delle città più densamente popolate del mondo."}
 
 
+}
+
+for k,v in cities.items():
+    print(k,"\n",v)
+
+
+
+    #6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
+    #Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
+    #or improving the formatting of the output.
+    
+
+    
 
 
 
