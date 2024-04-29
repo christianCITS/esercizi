@@ -101,6 +101,11 @@ print(f"esercizio 4-9: {cubi_comprehension}")
 # Print the message Three items from the middle of the list are:. Then use a slice to print three items from the middle of the list.
 # Print the message The last three items in the list are:. Then use a slice to print the last three items in the list.
 
+#lista presa da esercizio 4-6
+print("esercizio 4-10:")
+print(f"I primi 3 elementi della lista sono: {num_disp[:3]}.")
+print(f"3 elementi dal centro della lista sono: {num_disp[4:7]}")
+print(f"Gli ultimi 3 elementi della lista sono: {num_disp[-3:]}")
 
 
 
