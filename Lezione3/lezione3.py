@@ -107,6 +107,30 @@ print(f"I primi 3 elementi della lista sono: {num_disp[:3]}.")
 print(f"3 elementi dal centro della lista sono: {num_disp[4:7]}")
 print(f"Gli ultimi 3 elementi della lista sono: {num_disp[-3:]}")
 
+#4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1. Make a copy of the list of pizzas, and call it friend_pizzas. Then, do the following:
+# Add a new pizza to the original list.
+# Add a different pizza to the list friend_pizzas.
+# Prove that you have two separate lists. Print the message My favorite pizzas are:, and then use a for loop to print the first list. Print the message My friend’s favorite pizzas are:, and then use a for loop to print the second list. Make sure each new pizza is stored in the appropriate list.
+
+print("esercizio 4-11:")
+friend_pizzas:list[str]=pizza.copy()
+pizza.insert(0,"Boscaiola")
+friend_pizzas.insert(0,"Cacio e Pepe")
+print("Le mie pizze preferite sono: ")
+for i in pizza:
+    print(i)
+
+
+print("Le pizze preferite del mio miglior amico sono: ")
+for x in friend_pizzas:
+    print(x)
+
+
+
+
+
+
+
 
 
 
