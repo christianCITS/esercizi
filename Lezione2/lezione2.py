@@ -314,6 +314,10 @@ print(f"Il numero preferito di {num_fortch[0]} è: {num_fortva[0]}. \nmentre que
 
 
 
+##
+
+
+
 
 
 
