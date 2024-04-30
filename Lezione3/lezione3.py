@@ -347,3 +347,6 @@ for num in numeri:
         print(f"{num}rd")
     else:
         print(f"{num}th")
+
+
+
