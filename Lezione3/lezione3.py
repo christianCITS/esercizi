@@ -264,3 +264,86 @@ else:
 
 
 
+#5-7. Favorite Fruit: Make a list of your favorite fruits, and then write a series of independent if statements that check for certain fruits in your list.
+# Make a list of your three favorite fruits and call it favorite_fruits.
+# Write five if statements. Each should check whether a certain kind of fruit is in your list. If the fruit is in your list, the if block should print a statement, such as You really like Apples!
+print("\nESERCIZIO 5-7")
+lista_frutta:list[str]=["ananas","cocomero","cocco","melone","mele","pere"]
+trefrutti_prefe:list[str]=["fico d'India","ananas","mango","albicocca","cocomero"]
+if "banana" in lista_frutta:
+    print("\nla banana è presente nella lista della frutta!")
+else:
+    print("\nla banana NON è presente nella lista della frutta!")
+
+if "cocco" in lista_frutta:
+    print("\nil cocco è presente nella lista della frutta!")
+else:
+    print("\nil cocco NON è presente nella lista della frutta!")
+
+
+
+
+if trefrutti_prefe[0] in lista_frutta:
+    print(f"\n{trefrutti_prefe[0]} è nella lista.")
+if trefrutti_prefe[1] in lista_frutta:
+    print(f"\n{trefrutti_prefe[1]} è nella lista. ")
+if trefrutti_prefe[2] in lista_frutta:
+    print(f"\n{trefrutti_prefe[2]} è nella lista. ")
+if trefrutti_prefe[3] in lista_frutta:
+    print(f"\n{trefrutti_prefe[3]} è nella lista. ")
+if trefrutti_prefe[4] in lista_frutta:
+    print(f"\n{trefrutti_prefe[4]} è nella lista. ")
+
+
+    
+#5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the list, and print a greeting to each user.
+# If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?
+# Otherwise, print a generic greeting, such as Hello Jaden, thank you for logging in again.
+print("\nESERCIZIO 5-8")
+usernames = ['admin', 'Alice', 'Bob', 'Charlie', 'Dave']
+
+for utente in usernames:
+    
+    if utente == 'admin':
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print(f"Hello {utente}, thank you for logging in again.")
+
+
+
+
+#5-9. No Users: Add an if test to hello_admin.py to make sure the list of users is not empty.
+# If the list is empty, print the message We need to find some users!
+#Remove all of the usernames from your list, and make sure the correct message is printed.
+print("\nESERCIZIO 5-9")
+usernames = []
+
+
+if usernames:
+    for u in usernames:
+        if u == 'admin':
+            print("Hello admin, would you like to see a status report?")
+        else:
+            print(f"\nHello {u}, thank you for logging in again.")
+else:
+    print("We need to find some users!")
+
+
+
+
+#5-11. Ordinal Numbers: Ordinal numbers indicate their position in a list, such as 1st or 2nd. Most ordinal numbers end in th, except 1, 2, and 3.
+# Store the numbers 1 through 9 in a list.
+# Loop through the list.
+# Use an if-elif-else chain inside the loop to print the proper ordinal ending for each number. Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
+print("\nESERCIZIO 5-11")
+numeri = list(range(1, 10))
+
+for num in numeri:
+    if num == 1:
+        print(f"{num}st")
+    elif num == 2:
+        print(f"{num}nd")
+    elif num == 3:
+        print(f"{num}rd")
+    else:
+        print(f"{num}th")
