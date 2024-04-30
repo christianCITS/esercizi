@@ -206,26 +206,38 @@ elif alien_color == "red":
 
 
 
-
-
-#5-4. Alien Colors #2: Choose a color for an alien as you did in Exercise 5-3, and write an if-else chain.
-# If the alien’s color is green, print a statement that the player just earned 5 points for shooting the alien.
-# If the alien’s color isn’t green, print a statement that the player just earned 10 points.
-# Write one version of this program that runs the if block and another that runs the else block.
-print("\nESERCIZIO 5-4")
+print("\nESERCIZIO 5-4/5-5")
+lista_colori:list[str]=["yellow","red","green"]
 alien_color2:str="green"
+alien_color3:str="yellow"
+alien_color4:str="red"
 
-if alien_color2 == "green":
-    print("You earned 5 points!")
-elif alien_color2 == "red":
-    print("You earned 10 points!")
-elif alien_color2 == "yellow":
-    print("You earned 10 points!")
+if alien_color2 in lista_colori:
+    print("\nYou earned 5 points!")
+elif alien_color2 not in lista_colori:
+    print("\nIl colore non èpresente nella lista.")
 else:
     print("\n")
 
 
 
+if alien_color3 in lista_colori:
+   print("\nYou earned 10 points!") 
+elif alien_color3 not in lista_colori:
+    print("\nIl colore non è presente nella lista.")
+else:
+    print("\n")
+
+
+
+
+
+if alien_color4 in lista_colori:
+   print("\nYou earned 15 points!") 
+elif alien_color4 not in lista_colori:
+    print("\nIl colore non è presente nella lista.")
+else:
+    print("\n")
 
 
 
