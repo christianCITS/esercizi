@@ -251,9 +251,16 @@ print("\nESERCIZIO 5-6")
 age:int=int(input("Inserisci l'età desiderata: ").strip())
 if age <2:
     print("\nThe person is a baby")
-elif 2>= age <=4:
+elif age >=2 and age <=4:
     print("\nThe person is a toddler")
-
+elif age>4 and age <13:
+    print("\nThe person is a kid.")
+elif age>=13 and age <20:
+    print("\nThe person is a teenager.")
+elif age>=20 and age <=65:
+    print("\nThe person is a adult.")
+else:
+    print("\nThe person is an elder.")
 
 
 
