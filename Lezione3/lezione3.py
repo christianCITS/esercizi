@@ -2,7 +2,7 @@
 # Modify your for loop to print a sentence using the name of the pizza, instead of printing just the name of the pizza. For each pizza, you should have one line of output containing a simple statement like I like pepperoni pizza.
 # Add a line at the end of your program, outside the for loop, that states how much you like pizza. The output should consist of three or more lines about the kinds of pizza you like and then an additional sentence, such as I really love pizza!
 
-print("esercizio 4-1:")
+print("ESERCIZIO 4-1:")
 pizza:list[str]=["Diavola","Napoli","Margherita","Capricciosa"]
 
 
@@ -24,7 +24,7 @@ print(f"\nLa pizza che più mi piace è la {pizza[0]}, deve essere però fatta i
 # Add a line at the end of your program, stating what these animals have in common. You could print a sentence, such as Any of these animals would make a great pet!
 
 
-print("esercizio 4-2:")
+print("ESERCIZIO 4-2:")
 animals:list[str]=["cane","gatto","tigre","lupo"]
 
 for a in animals:
@@ -41,7 +41,7 @@ print(f"\nSia il {animals[0]} che il {animals[3]} fanno parte della famiglia dei
 
 
 #4-3. Counting to Twenty: Use a for loop to print the numbers from 1 to 20, inclusive.
-print("\nesercizio 4-3:")
+print("\nESERCIZIO 4-3:")
 for i in range(1,21):
     print (i)
 
@@ -49,7 +49,7 @@ for i in range(1,21):
 
 #4-4. One Million: Make a list of the numbers from one to one million, and then use a for loop to print the numbers. (If the output is taking too long, stop it by pressing CTRL-C or by closing the output window.)
 
-print("\nesercizio 4-4:(togliere commento per far partire il print)")
+print("\nESERCIZIO 4-4:(togliere commento per far partire il print)")
 one_million:list[int]=[x for x in range(1,1000001)]
 
 #for i in one_million:
@@ -63,7 +63,7 @@ one_million:list[int]=[x for x in range(1,1000001)]
 
 #4-5. Summing a Million: Make a list of the numbers from one to one million, and then use min() and max() to make sure your list actually starts at one and ends at one million. 
 #Also, use the sum() function to see how quickly Python can add a million numbers.
-print("esercizio 4-5:")
+print("ESERCIZIO 4-5:")
 print(f"\nIl numero più piccolo della lista è:{min(one_million)}")
 print(f"\nIl numero più grande della lista è:{max(one_million)}")
 print(f"\nLa somma di tutti i numeri è di:{sum(one_million)}")
@@ -71,12 +71,12 @@ print(f"\nLa somma di tutti i numeri è di:{sum(one_million)}")
 
 #4-6. Odd Numbers: Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number.
 num_disp:list[int]=[i for i in range(1,21,2)]
-print(f"\nesercizio 4-6: {num_disp}")
+print(f"\nESERCIZIO 4-6: {num_disp}")
 
 
 #4-7. Threes: Make a list of the multiples of 3, from 3 to 30. Use a for loop to print the numbers in your list.
 multipli3:list[int]=[index for index in range(3,33,3)]
-print(f"\nesercizio 4-7: {multipli3}")
+print(f"\nESERCIZIO 4-7: {multipli3}")
 
 
 
@@ -84,7 +84,7 @@ print(f"\nesercizio 4-7: {multipli3}")
 #Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), and use a for loop to print out the value of each cube.
 
 cubi:list[int]=[c for c in range(1,11)]
-print("\nesercizio 4-8:")
+print("\nESERCIZIO 4-8:")
 for e in cubi:
     print(e**3)
 
@@ -92,7 +92,7 @@ for e in cubi:
 #4-9. Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
 
 cubi_comprehension:list[int]=[index**3 for index in range(1,11)]
-print(f"esercizio 4-9: {cubi_comprehension}")
+print(f"ESERCIZIO 4-9: {cubi_comprehension}")
 
 
 
@@ -102,7 +102,7 @@ print(f"esercizio 4-9: {cubi_comprehension}")
 # Print the message The last three items in the list are:. Then use a slice to print the last three items in the list.
 
 #lista presa da esercizio 4-6
-print("esercizio 4-10:")
+print("ESERCIZIO 4-10:")
 print(f"\nI primi 3 elementi della lista sono: {num_disp[:3]}.")
 print(f"\n3 elementi dal centro della lista sono: {num_disp[4:7]}")
 print(f"\nGli ultimi 3 elementi della lista sono: {num_disp[-3:]}")
@@ -112,7 +112,7 @@ print(f"\nGli ultimi 3 elementi della lista sono: {num_disp[-3:]}")
 # Add a different pizza to the list friend_pizzas.
 # Prove that you have two separate lists. Print the message My favorite pizzas are:, and then use a for loop to print the first list. Print the message My friend’s favorite pizzas are:, and then use a for loop to print the second list. Make sure each new pizza is stored in the appropriate list.
 
-print("esercizio 4-11:")
+print("ESERCIZIO 4-11:")
 friend_pizzas:list[str]=pizza.copy()
 pizza.insert(0,"Boscaiola")
 friend_pizzas.insert(0,"Cacio e Pepe")
@@ -131,7 +131,7 @@ for x in friend_pizzas:
 #4-12. More Loops: All versions of foods.py in this section have avoided using for loops when printing, to save space. 
 #Choose a version of foods.py, and write two for loops to print each list of foods.
 
-print("esercizio 4-12: ")
+print("ESERCIZIO 4-12: ")
 for x in pizza:
     print(x)
 for y in friend_pizzas:
@@ -150,7 +150,7 @@ for y in friend_pizzas:
 #evaluates to True or False.
 #• Create at least 10 tests. Have at least 5 tests evaluate to True and another
 #5 tests evaluate to False.
-print("\nesercizio 5-1/5-2:")
+print("\nESERCIZIO 5-1/5-2:")
 bike:str="bici"
 print("is bike == bici? I predict True.")
 print(bike=="bici")
@@ -182,6 +182,34 @@ print("\nIs 'bici' in bike? I predict True")
 print("bici" in bike)
 print("\nIs bike in 'bici'? I predict True")
 print(bike in "bici")
+
+
+#5-3. Alien Colors #1: Imagine an alien was just shot down in a game. Create a variable called alien_color and assign it a value of 'green', 'yellow', or 'red'.
+#Write an if statement to test whether the alien’s color is green. If it is, print a message that the player just earned 5 points.
+# Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)
+print("\nESERCIZIO 5-3")
+alien_color:str="red"
+if alien_color is "red":
+    print("You earned 5 points!")
+else:
+    print("\n")
+
+
+
+if alien_color is "green":
+    print("\n")
+elif alien_color is "yellow":
+     print("\n")
+elif alien_color is "red":
+    print("You earned 5 points!")
+
+
+
+
+
+
+
+
 
 
 
