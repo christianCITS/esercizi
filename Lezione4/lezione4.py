@@ -94,18 +94,28 @@ print(make_album("Artic Monkeys","AM",12))
 #Be sure to include a quit value in the while loop.
 print("\nESERCIZIO 8-8")
 a:str="c"
-while a != "s" :
+'''while a != "s" :
     a:str=input("Inserire album: ")
     b:str=input("Inserire titolo canzone: ")
     if a =="s":
         break
-    print(make_album(a,b))
+    print(make_album(a,b))'''
+
+
+
+#8-9. Messages: Make a list containing a series of short text messages. 
+#Pass the list to a function called show_messages(), which prints each text message.
+
+print("\nESERCIZIO 8-9")
+messages:list[str]=["Ciao come stai?","Ti aspetto sotto casa.","Buonanotte ci sentiamo domani.","Non potrò essere presente alla festa."]
+def show_messages(mex:list[str]) ->None:
+    for t in mex:
+        print(t)
 
 
 
 
-
-
+show_messages(messages)
 
 
 
