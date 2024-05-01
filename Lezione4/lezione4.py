@@ -110,7 +110,7 @@ print("\nESERCIZIO 8-9")
 messages:list[str]=["Ciao come stai?","Ti aspetto sotto casa.","Buonanotte ci sentiamo domani.","Non potrò essere presente alla festa."]
 def show_messages(mex:list[str]) ->None:
     for t in mex:
-        print(t)
+        print(f"\n{t}")
 
 
 
@@ -118,7 +118,29 @@ def show_messages(mex:list[str]) ->None:
 show_messages(messages)
 
 
+#8-10. Sending Messages: Start with a copy of your program from Exercise 8-9. Write a function called send_messages() 
+#that prints each text message and moves each message to a new list called sent_messages as it’s printed. 
+#After calling the function, print both of your lists to make sure the messages were moved correctly.
+print("\nESERCIZIO 8-10")
+def send_messages(mex:list[str],) ->list[str]:
+    sent_messages:list[str]=[]
+    for t in mex:
+        print(f"\n{t}")
+        sent_messages.append(t)
+    return sent_messages
 
+
+
+sent_messages:list[str]=send_messages(messages)
+show_messages(messages)
+show_messages(sent_messages)
+
+
+
+
+
+
+        
 
 
 
