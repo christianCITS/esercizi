@@ -22,13 +22,9 @@ Favorite_Book("Il nome del vento")
 #8-3. T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. 
 #The function should print a sentence summarizing the size of the shirt and the message printed on it. 
 #Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.
-
-
-def Make_Shirt(size:(str),text:(str))->(str):
+print("\nESERCIZIO 8-3")
+def Make_Shirt(size:str,text:str)->(None):
     print(f"\nLa taglia della T-Shirt è una: {size}, ed il messaggio è: {text}.")
-
-
-
 Make_Shirt("L","Nella vecchia fattoria")
 Make_Shirt(size="L",text="Nella vecchia fattoria")
 
