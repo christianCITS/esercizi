@@ -139,13 +139,90 @@ show_messages(sent_messages)
 
 
 
-
-        
-
-
-
-
+#8-11. Archived Messages: Start with your work from Exercise 8-10. Call the function send_messages() with a copy of the list of messages. 
+#After calling the function, print both of your lists to show that the original list has retained its messages.
+print("\nESERCIZIO 8-11")      
+'''Fatto nell'esercizio precedente'''
 
 
 
 
+
+
+#8-12. Sandwiches: Write a function that accepts a list of items a person wants on a sandwich. 
+#The function should have one parameter that collects as many items as the function call provides, 
+#and it should print a summary of the sandwich that’s being ordered. Call the function three times, using a different number of arguments each time.
+print("\nESERCIZIO 8-12")
+ingredienti_panini:list[str]=["bacon","cipolla","hamburger","cetriolini","pomodori"]
+ingredienti_panini2:list[str]=["zucchine","peperoni","tofu"]
+ingredienti_panini3:list[str]=["mozzarella","prosciutto crudo","basilico","olio"]
+def ingr_sandwitch(*ingred:list[str])-> None:
+    for i in ingred:
+        print(f"\n{i}")
+
+
+
+
+
+ingr_sandwitch("bacon","cipolla","hamburger","cetriolini","pomodori")
+ingr_sandwitch(ingredienti_panini2)
+ingr_sandwitch(ingredienti_panini3)
+
+
+
+
+#8-13. User Profile:  Build a profile of yourself by calling build_profile(), using your first and last names and three other key-value pairs that describe you. 
+#All the values must be passed to the function as parameters. 
+#The function then must return a string such as "Eric Crow, age 45, hair brown, weight 67"
+print("\nESERCIZIO 8-13")
+def build_profile(name:str,surname:str,age:int,hair:str, weight:float)->str:
+    return f"{name} {surname},age:{age},hair:{hair},weight:{weight}"
+
+
+
+
+print(build_profile("Christian","Cioeta",29,"brown",70.5))
+
+
+
+
+
+
+#8-14. Cars: Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. 
+#Call the function with the required information and two other name-value pairs, such as a color or an optional feature. 
+#Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) 
+#Print the dictionary that’s returned to make sure all the information was stored correctly. 
+print("\nESERCIZIO 8-14")
+def info_car(manufacturer, model, **args):
+    car_info = {'manufacturer': manufacturer, 'model': model}
+    for key, value in args.items():
+        car_info[key] = value
+    return car_info
+
+
+
+
+car = info_car('Jeep', 'Fiat', colore='nero', gps=True)
+print(car)
+
+    
+
+    
+
+#8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py. 
+#Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+print("\nESERCIZIO 8-15")
+
+from printing_models import favorite_book
+
+favorite_book("Le cronache di Narnia")
+
+
+
+
+#8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. Import the function into your main program file, and call the function using each of these approaches:
+import printing_models
+from printing_models import somma
+from printing_models import favorite_book as fb
+import printing_models as pm
+from printing_models import divisione
