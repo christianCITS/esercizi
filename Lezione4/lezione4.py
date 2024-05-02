@@ -226,3 +226,8 @@ from printing_models import somma
 from printing_models import favorite_book as fb
 import printing_models as pm
 from printing_models import divisione
+
+
+
+
+print(divisione(10,5))
