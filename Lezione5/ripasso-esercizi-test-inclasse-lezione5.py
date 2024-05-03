@@ -203,8 +203,7 @@ def binary_search(array: list[int] , x: int) -> int:
     return None
 
 
-def __binary_search_recursive(array: list[int] , x: int ,
-                              low: int , high: int ) -> int:
+def __binary_search_recursive(array: list[int] , x: int , low: int , high: int ) -> int:
    
     mid = (low + high) // 2
 
@@ -217,3 +216,14 @@ def __binary_search_recursive(array: list[int] , x: int ,
 
 def binary_search_recursive(array: list[int] , x: int) ->int:
     return __binary_search_recursive(array ,x ,0 ,len(array))
+
+
+
+
+
+
+
+
+
+
+
