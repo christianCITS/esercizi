@@ -101,3 +101,60 @@ def convert_temperature(celsius:float,f:bool=True) -> float:
         tot=celsius -32
         tot=tot*5/9
     return tot
+
+
+
+
+
+
+
+
+
+#Nel gioco del blackjack, il valore di una mano è determinato dalla somma dei valori delle carte. Ogni carta ha un valore compreso tra 2 e 11 compresi. 
+#Tuttavia, se una mano contiene un asso, il valore dell'asso può essere 1 o 11, a seconda di quale sia più favorevole al giocatore in quel momento.
+#Dato un elenco di valori delle carte che rappresentano una mano di blackjack, scrivi una funzione per determinare il valore totale della mano.
+
+def blackjack(cards: list[int]):
+    cards_sum: int = sum(cards)
+    num_aces: int = cards.count(11)
+
+    while cards_sum > 21 and num_aces > 0:
+        cards_sum -= 10
+        num_aces -=1
+    
+    return cards_sum
+print(blackjack([1,10,11]))
+
+
+#Uno sviluppatore web deve sapere come progettare le dimensioni di una pagina web. Pertanto, data l'area specifica di una pagina Web rettangolare, 
+#il tuo compito ora è progettare una pagina Web rettangolare, la cui lunghezza L e larghezza W soddisfino i seguenti requisiti:
+#1. L'area della pagina web rettangolare che hai progettato deve essere uguale all'area di destinazione specificata.
+#2. La larghezza W non deve essere maggiore della lunghezza L, il che significa L >= W.
+#3. La differenza tra la lunghezza L e la larghezza W dovrebbe essere la minima possibile.
+
+#Restituisce una lista [L, W] dove L e W sono la lunghezza e la larghezza della pagina web che hai progettato in sequenza.
+
+#Esempio:
+
+#construct_rectangle(4)
+
+#L'area target è 4 e tutti i modi possibili per costruirla sono [1,4], [2,2], [4,1].
+#Ma secondo il requisito 2, [1,4] è illegale; secondo il requisito 3, [4,1] non è ottimale rispetto a [2,2]. Quindi la lunghezza L è 2 e la larghezza W è 2.
+
+def construct_rectangle(area: float) -> list[float]:
+    combos: list = []
+    for width in range(1, area  +1):
+        for height in range(1, area + 1):
+            if width * height == area and width >= height:
+                combos.append([width, height])
+    #combos = ([2,2], [4,1])
+    min_diff: float = float("inf")
+    for i, combo in enumerate (combos):
+        curr_diff: float = combo[0] - combo[1]
+        if curr_diff <= min_diff:
+            min_diff = curr_diff
+            index_diff = i
+    return combos [index_diff]
+print(construct_rectangle(4))
+print(construct_rectangle(37))
+print(construct_rectangle(42))
