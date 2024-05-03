@@ -158,3 +158,62 @@ def construct_rectangle(area: float) -> list[float]:
 print(construct_rectangle(4))
 print(construct_rectangle(37))
 print(construct_rectangle(42))
+
+# In questi alberi in nodo principale è il più grande di quello alla sua sinistra, ma è più piccolo di quello
+# alla sua destra
+#
+#es:               4
+#               3    5
+#              2   4.5  6
+
+def search(array: list[int] , x: int) -> int :
+    for i in range(len(array)):
+        if array[i] == x:
+            return x
+    
+    #se una lista non è ordinara per cercare x conviene fare questo,
+    #perchè ordinare una lista richiede un numero di operazioni lunghe quanto la lista
+
+    return None
+
+# Seguendo questa funzione  len(erray) fa 10.000 iterazioni
+# mentre così ne farebbe solo 14 log_2(len(array))   
+
+
+# array = [-1 ,0 ,1 ,5 ,65 ,67 ,99 ,912 ,1207]
+# x = 912
+
+def binary_search(array: list[int] , x: int) -> int:
+    
+    low = 0
+    high = len(array)
+
+    while low < high:
+        mid = (low + high) // 2
+        if array[mid] == x:
+            return mid
+        else:
+            if x > array[mid]:
+                low = mid + 1
+            else:
+                high = mid - 1
+    
+    #Queste due funzioni scritte, posso semplicemnte essere sostituite con array.index(x)
+
+    return None
+
+
+def __binary_search_recursive(array: list[int] , x: int ,
+                              low: int , high: int ) -> int:
+   
+    mid = (low + high) // 2
+
+    if x == array[mid]:
+        return mid
+    elif x > array[mid]:
+        return __binary_search_recursive(array ,x ,mid + 1 ,high)
+    else:
+        return __binary_search_recursive(array ,x ,low ,mid - 1)
+
+def binary_search_recursive(array: list[int] , x: int) ->int:
+    return __binary_search_recursive(array ,x ,0 ,len(array))
