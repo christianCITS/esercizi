@@ -66,7 +66,7 @@ print(people[3])"""
 
 
 
-class Student:
+"""class Student:
     def __init__(self,name:str,studyProgram:str,age:int=None,gender:str=None):
         self.name:str=name 
         self.studyProgram:str=studyProgram
@@ -90,4 +90,35 @@ mar=Student("Marco","Cloud Developer")
 
 
 print(Student.printInfo(chri))
-print(Student.printInfo(alb))
+print(Student.printInfo(alb))"""
+
+
+
+
+class Animal:
+     def __init__(self,name,legs):
+          self.name=name
+          self.legs=legs
+     def __str__(self) ->str:
+          return f"il nome dell'animale è : {self.name} e ha {self.legs} zampe."
+    
+
+     def get_legs(self) ->int:
+          return self.legs
+
+
+     
+
+dog=Animal("Milo",4)
+cat=Animal("Daisy",4)
+bird=Animal("Lu",2)
+
+print(dog)
+
+
+
+
+
+
+
+
