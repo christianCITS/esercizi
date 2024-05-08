@@ -16,7 +16,7 @@ class Animal:
         self.height=height
         self.wight=wight
         self.pre_habitat=pre_habitat
-        self.health=health
+        self.health=None
 
 
 
@@ -35,6 +35,8 @@ class Zookeeper:
         self.surname=surname
         self.id=id
 
+
+    def add_animal(self,animal: Animal, fence: Fence):
         
 
 
