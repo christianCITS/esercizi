@@ -37,22 +37,3 @@ class Zookeeper:
 
 
     def add_animal(self,animal: Animal, fence: Fence):
-        
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-

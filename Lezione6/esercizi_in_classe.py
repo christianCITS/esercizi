@@ -1,8 +1,8 @@
-"""class Food:
+class Food:
     def __init__(self,name:str,price:float,descr:str):
         self.name=name
         self.price=price
-        self.descr=descr
+        self.descr=descr 
 
 
 
@@ -23,18 +23,13 @@ class Menu:
         
     
     def removeFood(self,food:Food):
-        self.foods.remove(food)"""
+        self.foods.remove(food)
 
 
 
 
 
 ##################################################################################################################################
-
-
-
-
-
 
     
         
