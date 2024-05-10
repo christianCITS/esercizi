@@ -64,9 +64,3 @@ def delete_book(diz:dict,author:str)-> dict:
 
 print(delete_book(dizionario_autori,"j.k rowling"))
 
-
-#3. Personal Info:
-
-#Write a build_profile() function that accepts the name , surname,  occupation, location, and age  of a person. Make occupation, location, and age optional parameters. Use this function to create profiles for different people, demonstrating how it handles these optional parameters.
-
-#Example: build_profile("John", "Doe", occupation="Developer", location="USA", age=30)
