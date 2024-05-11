@@ -6,7 +6,7 @@ class Restaurant:
     def __init__(self,restaurant_name:str,cuisine_type:str,number_served:int=0):
         self.restaurant_name:str=restaurant_name
         self.cuisine_type:str=cuisine_type
-        self.number_served:int=0
+        self.number_served=number_served
     
     
     def describe_restaurant(self):
@@ -15,10 +15,16 @@ class Restaurant:
     
     def open_restaurant(self):
         print(f"Il ristorante è APERTO!")
-
+    
+    def set_number_served(self,numb_serv:int)-> int:
+        self.number_served=numb_serv
+        return self.number_served
+        
+    def increment_number_served(self,incr_serv:int)-> int:
+        self.number_served+=incr_serv 
+        return self.number_served  
 
     
-
 ristorante1=Restaurant("Da Giggetto","cucina italiana")
 print(ristorante1.restaurant_name)
 print("-"*30)
@@ -49,11 +55,12 @@ ristorante4.describe_restaurant()
 #Create several instances representing different users, and call both methods for each user.
 
 class Users:
-    def __init__(self,first_name:str,last_name:str,gender:str,age:int):
+    def __init__(self,first_name:str,last_name:str,gender:str,age:int,login_attempts:int):
         self.first_name=first_name
         self.last_name=last_name
         self.gender=gender
         self.age=age
+        self.login_attempts=login_attempts
 
     def describe_user(self):
         print(f"nome: {self.first_name}\ncognome: {self.last_name}\nsesso: {self.gender}\netà: {self.age}")
@@ -61,11 +68,19 @@ class Users:
     def greet_user(self):
         print(f"Ciao {self.first_name} grazie per esserti connesso!")
 
+    def increment_login_attempts(self):
+        self.login_attempts+=1
+        return self.login_attempts
+        
+    
+    def reset_login_attempts(self):
+        self.login_attempts=0
+        return self.login_attempts
 
-user1=Users("Romualdo","Franceschini","UOMO",35)
-user2=Users("Christian","Errini","DONNA",54)
-user3=Users("Alberto","Bonavista","UOMO",65)
-user4=Users("Francesco","Salomoni","UOMO",18)
+user1=Users("Romualdo","Franceschini","UOMO",35,0)
+user2=Users("Christian","Errini","DONNA",54,0)
+user3=Users("Alberto","Bonavista","UOMO",65,0)
+user4=Users("Francesco","Salomoni","UOMO",18,0)
 
 print("-"*30)
 user1.describe_user()
@@ -93,7 +108,44 @@ print("-"*30)
 #of customers who’ve been served. Call this method with any number you like that could represent how many customers were served in, say, a day of business. 
 
 
+restaurant=Restaurant("Da Walter","cucina tipica abbruzzese",50)
+print("le persone che sono state servite sono: ",restaurant.number_served)
+print("-"*30)
+restaurant.number_served=10
+print("le persone che sono state servite sono: ",restaurant.number_served)
+print("-"*30)
 
+
+print("numero di persone servite settato a : ",restaurant.set_number_served(70))
+print("con questo incremento le persone servite sono: ",restaurant.increment_number_served(30))
+print("-"*30)
+
+
+
+#9-5. Login Attempts: Add an attribute called login_attempts to your User class from Exercise 9-3. Write a method called increment_login_attempts() that increments the value of login_attempts by 1. 
+#Write another method called reset_login_attempts() that resets the value of login_attempts to 0. Make an instance of the User class and call increment_login_attempts() several times. 
+#Print the value of login_attempts to make sure it was incremented properly, 
+#and then call reset_login_attempts(). Print login_attempts again to make sure it was reset to 0.
+
+
+user5=Users("Giovanni","Lucifora","UOMO",43,0)
+print("numero login attuale: ",user5.login_attempts)
+user5.increment_login_attempts()
+user5.increment_login_attempts()
+user5.increment_login_attempts()
+user5.increment_login_attempts()
+print("numero login attuale: ",user5.login_attempts)
+user5.reset_login_attempts()
+print("numero login attuale: ",user5.login_attempts)
+
+
+# #######FINIRE ESERCIZI E AGGIUNGERE NUMERO ESERCIZIO CON \N ########
+
+
+
+
+
+    
 
 
 
