@@ -246,11 +246,7 @@ class Zookeeper:
             return fence.get_area()
         return (fence.get_area()-fence.get_area_rem())/fence.get_area_rem()
     
-
-
-
-
-
+    
 
 
 
