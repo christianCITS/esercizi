@@ -1,18 +1,34 @@
 import random
-t:int=4
+t:int=0
 h:int=0
 
 def visualizza_pos(t:int,h:int):
     tracciato:list[str]=["_"]*70
-    if t==h:
-          print("OUCH")
-    for _ in range(len(tracciato)):
-          tracciato[t]="T"
-          tracciato[h]="H"
+    print("BANG !!!!! AND THEY'RE OFF !!!!!")
+    while True:
+              for e in range(len(tracciato)):
+                     tracciato[t]="T"
+                     tracciato[h]="H"
+                     if tracciato[e]=="T":
+                           
+                           
 
+
+              pas_t:int=tartaruga()
+              pas_h:int=lepre()
+                     
+              
+              
+              
+              
+
+    
+
+       
 
           
-def tartaruga(pos):
+def tartaruga():
+    pos:int=0
     dado:int=random.randint(1,10)
     if 1<= dado<=5:
            pos+=3
@@ -25,8 +41,9 @@ def tartaruga(pos):
 
 
     
-def lepre(pos):
+def lepre():
       dado:int=random.randint(1,10)
+      pos:int=0
       if 1<= dado<=2:
             pass
       if 3<= dado <=4:
@@ -40,9 +57,13 @@ def lepre(pos):
       return pos
 
 
-def gara():
-      while True:
-            
+'''print(tartaruga())
+print(lepre())'''
+
+
+print(visualizza_pos(t,h))
+
+
             
       
 
