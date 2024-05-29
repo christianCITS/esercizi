@@ -11,8 +11,7 @@ def visualizza_pos(t:int,h:int):
                      tracciato[h]="H"
                      if tracciato[e]=="T":
                            
-                           
-
+      
 
               pas_t:int=tartaruga()
               pas_h:int=lepre()
