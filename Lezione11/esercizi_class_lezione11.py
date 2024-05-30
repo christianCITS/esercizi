@@ -1,6 +1,7 @@
 """Sistema di Prenotazione Cinema
 
-Sviluppa un sistema in Python che gestisca le prenotazioni per un cinema. Il cinema ha diverse sale, ognuna con un diverso film in programmazione. Gli utenti possono vedere quali film sono disponibili e prenotare posti per un determinato spettacolo.
+Sviluppa un sistema in Python che gestisca le prenotazioni per un cinema. Il cinema ha diverse sale, ognuna con un diverso film in programmazione. 
+Gli utenti possono vedere quali film sono disponibili e prenotare posti per un determinato spettacolo.
  
 Classi:
 - Film: Rappresenta un film con titolo e durata.
@@ -31,7 +32,7 @@ class Film:
 class Sala:
     def __init__(self,num_sala:int,film_progr:str,post_disp:int,post_pren:int):
         self.num_sala:int=num_sala
-        self.film_progr:list[str]=film_progr
+        self.film_progr:str=film_progr
         self.post_disp:int=post_disp
         self.post_pren:int=post_pren
     
@@ -72,11 +73,14 @@ class Cinema():
     def aggiungi_sala(self,new_sala:Sala):
         if new_sala not in self.lista_sale:
             self.lista_sale.append(new_sala)
+        else:
+            print(f"la sala numero {}")
             
 
     def prenota_film(self,titolo_film:str,num_posti:int):
         for s in self.lista_sale:
-            if titolo_film == s.film.titolo:
+            if titolo_film == s.film_progr.titolo
+
                 
 
 
@@ -99,7 +103,7 @@ class Cinema():
 
 cinema=Cinema()
 film1=Film("titolo_film",120)
-sala1=Sala(10,film1,100,0)
+sala1=Sala(1,film1,100,0)
 cinema.aggiungi_sala(sala1)
 print(sala1.posti_disponibili())
 print(sala1.prenota_posti(10))
