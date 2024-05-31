@@ -74,12 +74,18 @@ class Cinema():
         if new_sala not in self.lista_sale:
             self.lista_sale.append(new_sala)
         else:
-            print(f"la sala numero {}")
+            print(f"la sala numero {new_sala} non può essere aggiunta poichè esiste già!")
             
 
     def prenota_film(self,titolo_film:str,num_posti:int):
         for s in self.lista_sale:
-            if titolo_film == s.film_progr.titolo
+            if titolo_film == s.film_progr and num_posti <= s.post_disp:
+                s.post_disp-=num_posti
+                print(f"I biglietti sono stati prenotati per il film: {titolo_film}")
+
+            elif titolo_film!= s.film_progr:
+                print(f"Siamo spiacenti il film non è diponibile")
+            
 
                 
 
@@ -108,3 +114,4 @@ cinema.aggiungi_sala(sala1)
 print(sala1.posti_disponibili())
 print(sala1.prenota_posti(10))
 print(sala1.posti_disponibili())
+cinema.prenota_film("titolo_film",10)
