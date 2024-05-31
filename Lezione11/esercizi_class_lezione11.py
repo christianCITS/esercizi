@@ -59,12 +59,6 @@ class Sala:
             
 
 
-        
-
-        
-        
-
-
 
 class Cinema():
     def __init__(self):
@@ -79,34 +73,15 @@ class Cinema():
 
     def prenota_film(self,titolo_film:str,num_posti:int):
         for s in self.lista_sale:
-            if titolo_film == s.film_progr and num_posti <= s.post_disp:
+            if titolo_film == s.film_progr.titolo and num_posti <= s.post_disp:
                 s.post_disp-=num_posti
-                print(f"I biglietti sono stati prenotati per il film: {titolo_film}")
+                print(f"I biglietti sono stati prenotati per il film: {titolo_film} e il numero di biglietti è: {s.post_disp}")
 
             elif titolo_film!= s.film_progr:
                 print(f"Siamo spiacenti il film non è diponibile")
             
 
                 
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
 cinema=Cinema()
 film1=Film("titolo_film",120)
 sala1=Sala(1,film1,100,0)
@@ -114,4 +89,7 @@ cinema.aggiungi_sala(sala1)
 print(sala1.posti_disponibili())
 print(sala1.prenota_posti(10))
 print(sala1.posti_disponibili())
-cinema.prenota_film("titolo_film",10)
+cinema.prenota_film("titolo_film",15)
+
+
+
