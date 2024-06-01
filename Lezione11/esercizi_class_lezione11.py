@@ -75,7 +75,7 @@ class Cinema():
         for s in self.lista_sale:
             if titolo_film == s.film_progr.titolo and num_posti <= s.post_disp:
                 s.post_disp-=num_posti
-                print(f"I biglietti sono stati prenotati per il film: {titolo_film} e il numero di biglietti è: {s.post_disp}")
+                print(f"I biglietti sono stati prenotati per il film: {titolo_film} e il numero di biglietti prenotati è: {num_posti}")
 
             elif titolo_film!= s.film_progr:
                 print(f"Siamo spiacenti il film non è diponibile")
