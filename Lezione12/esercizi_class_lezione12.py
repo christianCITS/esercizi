@@ -36,26 +36,24 @@ class Biblioteca:
         for libro in self.lista_libri:
             if titolo == libro.titolo and libro.is_borrowed==False:
                 libro.is_borrowed=True
-            return f"Il libro: {titolo} è stato prestato!"
+                return f"Il libro: {titolo} è stato prestato!"
         return f"Il libro non è diponibile"
     
     def restituisci_libro(self,titolo:str):
         for libro in self.lista_libri:
             if titolo == libro.titolo and libro.is_borrowed==True:
                 libro.is_borrowed=False
-            return f"Il libro: {titolo} è stato restituito!"
+                return f"Il libro: {titolo} è stato restituito!"
         return f"Il libro non è diponibile"
 
 
 
 biblioteca:Biblioteca=Biblioteca()
 libro1:Libro=Libro("Le cronache de Maxi","Maxi",False)
-libro2:Libro=Libro("Fra e l'alcolismo","frabosco",True)
+libro2:Libro=Libro("Fra e l'alcolismo","frabosco",False)
 libro3:Libro=Libro("titolodellibro","autor",False)
 print(biblioteca.aggiungi_libro(libro1))
 print(biblioteca.aggiungi_libro(libro2))
-print(biblioteca.presta_libro("Le cronache de Maxi"))
-print(biblioteca.restituisci_libro("Le cronache de Maxi"))
 print(biblioteca.presta_libro("Le cronache de Maxi"))
 print(biblioteca.presta_libro("Fra e l'alcolismo"))
 
