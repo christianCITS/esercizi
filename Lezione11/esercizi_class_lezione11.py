@@ -20,6 +20,9 @@ Metodi:
 
 
 
+from typing import Any
+
+
 class Film:
 
     def __init__(self,titolo:str,durata:int):
@@ -81,15 +84,71 @@ class Cinema():
                 print(f"Siamo spiacenti il film non è diponibile")
             
 
-                
-cinema=Cinema()
-film1=Film("titolo_film",120)
-sala1=Sala(1,film1,100,0)
-cinema.aggiungi_sala(sala1)
-print(sala1.posti_disponibili())
-print(sala1.prenota_posti(10))
-print(sala1.posti_disponibili())
-cinema.prenota_film("titolo_film",15)
+
+
+
+'''Gestione di un magazzino
+Scrivi un programma in Python che gestisca un magazzino. Il programma deve permettere di aggiungere prodotti al magazzino, 
+cercare prodotti per nome e verificare la disponibilità di un prodotto.
+
+Definisci una classe Prodotto con i seguenti attributi:
+- nome (stringa)
+- quantità (intero)
+ 
+Definisci una classe Magazzino con i seguenti metodi:
+- aggiungi_prodotto(prodotto: Prodotto): aggiunge un prodotto al magazzino.
+- cerca_prodotto(nome: str) -> Prodotto: cerca un prodotto per nome e lo ritorna se esiste.
+- verifica_disponibilità(nome: str) -> str: verifica se un prodotto è disponibile in magazzino.'''
+
+
+class Prodotto:
+    def __init__(self,nome:str,quant:int):
+        self.nome:str=nome
+        self.quant:int=quant
+
+    def __str__(self):
+        return f"{self.nome},(quant: {self.quant})"
+
+
+
+class Magazzino:
+    def __init__(self):
+        self.lista_prodotti:list[Prodotto]=[]
+
+
+
+
+
+
+    def aggiungi_prodotto(self,prodotto:Prodotto):
+        if prodotto not in self.lista_prodotti:
+            self.lista_prodotti.append(prodotto)
+            print(f"il prodotto: {prodotto} è stato aggiunto correttamente nel magazzino!")
+
+    
+    def cerca_prodotto(self,nome: str)-> Prodotto:
+        for prod in self.lista_prodotti:
+            if nome == prod.nome:
+                return prod
+        
+        return f"Il prodotto che cerchi non è in magazzino!" 
+        
+    
+    def verifica_disponibilità(self,nome: str) -> str:
+        for prod in self.lista_prodotti:
+            if nome == prod.nome:
+                return f" Il prodotto che cerchi è disponibile in queste quantità: {prod}"
+        
+        return f"Il prodotto che cerchi NON è DISPONIBILE!"
+
+
+    
+    
+    
+    
+    
+
+
 
 
 
