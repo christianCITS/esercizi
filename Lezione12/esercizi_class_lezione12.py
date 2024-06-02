@@ -46,17 +46,29 @@ class Biblioteca:
                 return f"Il libro: {titolo} è stato restituito!"
         return f"Il libro non è diponibile"
 
+    def mostra_libri_disponibili(self):
+        for libri in self.lista_libri:
+            if libri.is_borrowed== False:
+                print(f"DISPONIBILE: {libri.titolo}")
+            
+            elif libri.is_borrowed!= False:
+                print(f"NON DISPONIBILE: {libri.titolo}")
+            
+                
+
 
 
 biblioteca:Biblioteca=Biblioteca()
-libro1:Libro=Libro("Le cronache de Maxi","Maxi",False)
-libro2:Libro=Libro("Fra e l'alcolismo","frabosco",False)
-libro3:Libro=Libro("titolodellibro","autor",False)
+libro1:Libro=Libro("Le cronache de Maxi","Maxi")
+libro2:Libro=Libro("Fra e l'alcolismo","frabosco")
+libro3:Libro=Libro("titolodellibro","autor")
 print(biblioteca.aggiungi_libro(libro1))
 print(biblioteca.aggiungi_libro(libro2))
-print(biblioteca.presta_libro("Le cronache de Maxi"))
+print(biblioteca.aggiungi_libro(libro3))
+'''print(biblioteca.presta_libro("Le cronache de Maxi"))
+print(biblioteca.presta_libro("titolodellibro"))'''
 print(biblioteca.presta_libro("Fra e l'alcolismo"))
-
+biblioteca.mostra_libri_disponibili()
 
 
 
