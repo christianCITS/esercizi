@@ -79,7 +79,7 @@ Metodi:
     - get_movies_by_director(director_name): Restituisce tutti i film di un regista specifico.
 
     - search_movies_by_title(title): Trova tutti i film che contengono una certa parola nel titolo. 
-    Restituisce un elenco dei registi e dei rispettivi film che contengono la parola cercata o un messaggio di errore se nessun film contiene 
+    Restituisce un elenco dei registi e dei rispettivi film che contengono la parola cercata o un messaggio di errore se nessun film contiene. 
     la parola cercata nel titolo.'''
 
 
@@ -103,14 +103,15 @@ class MovieCatalog:
 
 
     def remove_movie(self,director_name, movie_name):
-        if len(self.diz_director[director_name]==0):
-            return f" Il regista {director_name} non ha film in archivio da eliminare"
-        
-        for v in self.diz_director.values():
-            if movie_name== v:
-                self.diz_director[director_name]-= movie_name
-            return self.diz_director 
 
+        for k,v in self.diz_director.items():
+            if k== director_name:
+                v.remove(movie_name)
+            return self.diz_director 
+        
+        if len(self.diz_director)==0:
+            print("Il regista non ha più film nel catalogo!")
+            
 
         
 
@@ -122,11 +123,11 @@ class MovieCatalog:
 
 catalogo=MovieCatalog()
 
-
-
-
+print(catalogo.add_movie("Filippo",["film1"]))
 print(catalogo.add_movie("Tarantino",["Kill Bill","Le Iene"]))
 print(catalogo.remove_movie("Tarantino", "Kill Bill"))
+print(catalogo.remove_movie("Filippo", "film1"))
+
 
 
 
