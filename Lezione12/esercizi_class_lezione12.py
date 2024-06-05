@@ -86,19 +86,52 @@ Metodi:
 
 
 
-
-
-
-
-
-
 class MovieCatalog:
-    def __init__(self,):
-        pass
+    def __init__(self):
+        self.diz_director:dict[str,str]={}
+        
+
+    def add_movie(self,director_name:str,movies_name:list[str]):
+        if director_name not in self.diz_director:
+            self.diz_director[director_name]= movies_name
+            return self.diz_director
+        else:
+            self.diz_director[director_name]+=movies_name
+            return self.diz_director
+        
 
 
 
-"commit prova"
+    def remove_movie(self,director_name, movie_name):
+        if len(self.diz_director[director_name]==0):
+            
+
+
+        
+
+    
+
+
+
+
+
+catalogo=MovieCatalog()
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
 
 
     
