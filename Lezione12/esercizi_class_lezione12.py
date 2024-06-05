@@ -37,7 +37,7 @@ class Biblioteca:
             if titolo == libro.titolo and libro.is_borrowed==False:
                 libro.is_borrowed=True
                 return f"Il libro: {titolo} è stato prestato!"
-        return f"Il libro non è diponibile"
+        return f"Il  libro non è diponibile"
     
     def restituisci_libro(self,titolo:str):
         for libro in self.lista_libri:
