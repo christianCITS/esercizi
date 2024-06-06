@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <title>I miei quadri</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<!--Step1-->
+<!--
+
+    <div class="main-container">
+        <div class="image-container">
+            <img src="1.jpg" class="image-css" />
+            <img src="2.jpg" class="image-css" />
+            <img src="3.jpg" class="image-css" />
+            <img src="4.jpg" class="image-css" />
+            <img src="5.jpg" class="image-css" />
+            <img src="6.jpg" class="image-css" />
+        </div>
+		
+        <div class="button-container">
+            <a href="" class="button-css">b1</a>
+            <a href="" class="button-css">b2</a>
+            <a href="" class="button-css">b3</a>
+        </div>
+		
+    </div>
+-->
+<!--Fine Step1-->
+
+
+<!--Step2 (commentare prima step1)-->
+
+    <div class="main-container">
+        <span id="slider-image-1"></span>
+        <span id="slider-image-2"></span>
+        <span id="slider-image-3"></span>
+		<span id="slider-image-4"></span>
+
+        <div class="image-container">
+            <img src="1.jpg" class="image-css" />
+            <img src="2.jpg" class="image-css" />
+            <img src="3.jpg" class="image-css" />
+            <img src="4.jpg" class="image-css" />
+            <img src="5.jpg" class="image-css" />
+            <img src="6.jpg" class="image-css" />
+        </div>
+		
+        <div class="button-container">
+            <a href="#slider-image-1" class="button-css">b1</a>
+            <a href="#slider-image-2" class="button-css">b2</a>
+            <a href="#slider-image-3" class="button-css">b3</a>
+        </div>
+		
+    </div>
+
+<!--Fine Step2-->
+
+
+<!--Step3 (commentare prima step1 e step2)-->
+<!-- float: left significa che ogni immagine va a sinistra dell'altra
+definendo un allineamento orizzontale
+-->
+<!--
+<style>
+div.gallery {
+  margin: 5px;
+  border: 10px solid #ccc;
+  float: left;
+  width: 180px;
+  height: 220px;
+}
+
+div.gallery:hover {
+  border: 10px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+<div class="gallery">
+  <a target="_blank" href="1.jpg">
+    <img src="1.jpg" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="2.jpg">
+    <img src="2.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="3.jpg">
+    <img src="3.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="4.jpg">
+    <img src="4.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="5.jpg">
+    <img src="5.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+-->
+<!--Fine Step3-->
+
+<!--Step4 (commentare prima step1 e step2 e step3)-->
+<!-- float: left significa che ogni immagine va a sinistra dell'altra
+definendo un allineamento orizzontale
+-->
+
+<style>
+
+.center {
+  margin: auto;
+  width: 80%; 
+}
+
+div.gallery {
+  margin: 5px;
+  border: 10px solid #ccc;
+  float: left;
+  width: 180px;
+  height: 220px; 
+}
+
+div.gallery:hover {
+  border: 10px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+#largedesc {
+  padding: 15px;
+  text-align: center;
+  visibility:hidden;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+div.buttonlist {
+	clear: both;	
+	text-align: center;
+}
+
+#slider-image-1:target ~ div.gallery 
+{
+   visibility:hidden;
+   width:0%;
+   height:0%;
+}
+
+#slider-image-1:target ~ #largedesc
+{  
+	padding: 15px;
+	text-align: center;
+	visibility:visible;
+}
+
+#slider-image-1:target ~ #img1 
+{
+   background-color: brown;
+   visibility:visible;
+   width:50%;
+   height:50%;
+   margin-left:22%;
+}
+
+#slider-image-2:target ~ div.gallery
+{
+   visibility:hidden;
+   margin-left:0px;
+   width:0%;
+   height:0%;
+}
+
+#slider-image-2:target ~ #img2
+{
+   background-color: brown;
+   visibility:visible;
+   width:50%;
+   height:50%;
+   margin-left:25%;
+}
+
+
+
+#slider-image-3:target ~ #img3
+{
+   background-color: brown;
+}
+
+#slider-image-4:target ~ #img4
+{
+   background-color: brown;
+}
+
+#slider-image-5:target ~ #img5
+{
+   background-color: brown;
+}
+
+#slider-image-all:target ~ div.gallery 
+{
+   visibility:visible;
+}
+
+
+</style>
+<div class="center">
+
+<span id="slider-image-1"></span>
+<span id="slider-image-2"></span>
+<span id="slider-image-3"></span>
+<span id="slider-image-4"></span>
+<span id="slider-image-5"></span>
+
+<div class="gallery" id="img1">
+  <a target="_blank" href="1.jpg">
+    <img src="1.jpg" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+  <div id="largedesc">Descrizione lunga</div>
+</div>
+
+<div class="gallery" id="img2">
+  <a target="_blank" href="2.jpg">
+    <img src="2.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery" id="img3">
+  <a target="_blank" href="3.jpg">
+    <img src="3.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery" id="img4">
+  <a target="_blank" href="4.jpg">
+    <img src="4.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery" id="img5">
+  <a target="_blank" href="5.jpg">
+    <img src="5.jpg" alt="Mountains" width="600" height="400">
+  </a>
+<div class="desc">Add a description of the image here</div>
+</div>
+</div>
+<div class="buttonlist">
+            <a href="#slider-image-1" class="button-css">b1</a>
+            <a href="#slider-image-2" class="button-css">b2</a>
+            <a href="#slider-image-3" class="button-css">b3</a>
+            <a href="#slider-image-4" class="button-css">b4</a>
+            <a href="#slider-image-5" class="button-css">b5</a>
+			<a href="" class="button-css">All</a>
+</div>
+
+<!--Fine Step4-->
+
+
+
+
+</body>
+</html>
