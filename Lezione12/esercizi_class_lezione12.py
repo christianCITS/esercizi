@@ -100,8 +100,7 @@ class MovieCatalog:
             return self.diz_director
         
 
-
-
+        
     def remove_movie(self,director_name, movie_name):
 
         for k,v in self.diz_director.items():
