@@ -102,14 +102,20 @@ class MovieCatalog:
 
         
     def remove_movie(self,director_name, movie_name):
-
+        if len(self.diz_director[director_name])==0:
+            return (f"Il regista {director_name} non ha più film nel catalogo!")
+            
         for k,v in self.diz_director.items():
             if k== director_name:
                 v.remove(movie_name)
-            return self.diz_director 
+                return self.diz_director 
+            
+
+    def list_directors(self):
+        for k in self.diz_director.keys():
+            pass
         
-        if len(self.diz_director)==0:
-            print("Il regista non ha più film nel catalogo!")
+        
             
 
         
@@ -125,6 +131,7 @@ catalogo=MovieCatalog()
 print(catalogo.add_movie("Filippo",["film1"]))
 print(catalogo.add_movie("Tarantino",["Kill Bill","Le Iene"]))
 print(catalogo.remove_movie("Tarantino", "Kill Bill"))
+print(catalogo.remove_movie("Filippo", "film1"))
 print(catalogo.remove_movie("Filippo", "film1"))
 
 
