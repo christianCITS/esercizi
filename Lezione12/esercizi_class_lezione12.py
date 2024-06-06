@@ -101,7 +101,7 @@ class MovieCatalog:
         
 
         
-    def remove_movie(self,director_name, movie_name):
+    def remove_movie(self,director_name:str, movie_name:str):
         if len(self.diz_director[director_name])==0:
             return (f"Il regista {director_name} non ha più film nel catalogo!")
             
@@ -113,10 +113,27 @@ class MovieCatalog:
 
     def list_directors(self):
         for k in self.diz_director.keys():
-            pass
-        
-        
+            print(k)
+
+    
+    
+    def get_movies_by_director(self,director_name:str):
+        for k,v in self.diz_director.items():
+            if director_name== k:
+                return f" I film del regista {director_name} sono: {v} "
+        return f" Non ci sono film disponibili per il regista scelto ({director_name})"
+    
+
+    def search_movies_by_title(self,title:str):
+        n_diz:dict[str,list[str]]={}
+        for k,v in self.diz_director.items():
+            if  title==v:
+                n_diz[k]=v
+            return n_diz
             
+        
+        
+    
 
         
 
@@ -127,12 +144,11 @@ class MovieCatalog:
 
 
 catalogo=MovieCatalog()
-
+print(catalogo.add_movie("Maxi",["film"]))
+print(catalogo.add_movie("Davide",["film ciao"]))
 print(catalogo.add_movie("Filippo",["film1"]))
 print(catalogo.add_movie("Tarantino",["Kill Bill","Le Iene"]))
-print(catalogo.remove_movie("Tarantino", "Kill Bill"))
-print(catalogo.remove_movie("Filippo", "film1"))
-print(catalogo.remove_movie("Filippo", "film1"))
+print(catalogo.search_movies_by_title("il"))
 
 
 
