@@ -8,7 +8,7 @@ with open("Lezione15/file.txt") as file :
 
 
 
-# IN QUESTO MODO SI DEFINISCE LA CLASSE PER DEFINIRE IL CPOMPORTAMENTO DI <WITH>
+# IN QUESTO MODO SI DEFINISCE LA CLASSE PER DEFINIRE IL CPOMPORTAMENTO DI <WITH> ( non serve)
 class ContextManager:
     def __enter__(self):
         print("risorsa acquisita!")
