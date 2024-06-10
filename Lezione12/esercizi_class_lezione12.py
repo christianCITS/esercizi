@@ -126,7 +126,6 @@ class MovieCatalog:
 
     def search_movies_by_title(self,title:str):
         n_diz:dict[str,list[str]]={}
-        lista_vuota:list[str]=[]
         for k,v in self.diz_director.items():
             if  title in v:
                 n_diz[k]=v
