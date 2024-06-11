@@ -259,40 +259,71 @@ Formule Matematiche:
         Formula: popolazione_nuova = popolazione_attuale x (1 + tasso_crescita/100)
     Calcolo della densità di popolazione:
         Formula: popolazione / area_kmq
-        Hint: Loop incrementale che continua ad aggiornare la popolazione finché la densità non raggiunge 1 individuo per km²
-    Calcolo degli anni necessari per superare la popolazione di un'altra specie:
-        Hint: Loop incrementale che continua ad aggiornare la popolazione di entrambe le specie finché la popolazione di questa specie non supera quella dell'altra. Per evitare che le popolazioni crescano all'infinito, limitare il numero di anni a 1000. '''
-
+        Hint: Loop incrementale che continua ad aggiornare la popolazione finché la densità non raggiunge 1 individuo per km²'''
+   
 
 
         
     
 class Specie:
     def __init__(self,nome:str,popolazione_iniziale:int,tasso_crescita:float):
-        self.nome:str=nome
+        self.nome=nome
         self.popolazione_iniziale=popolazione_iniziale
         self.tasso_crescita=tasso_crescita
     
 
     def cresci(self):
-        popolazione_aggiornata:int=self.popolazione_iniziale*(1+self.tasso_crescita/100)
-        return popolazione_aggiornata
+        self.popolazione_iniziale*=(1+self.tasso_crescita/100)
+        return self.popolazione_iniziale
 
     def anni_per_superare(self, altra_specie: 'Specie') -> int:
-        cont:int=0
+        cont:int=1
         while cont <  1000:
-            self.popolazione_iniziale.cresci()
+            self.cresci()
             altra_specie.cresci()
             cont+=1
             if altra_specie.popolazione_iniziale > self.popolazione_iniziale:
-                return f"tra {cont} anni l'altra specie supererà quella attuale"
+                return cont
+            
+    def getDensita(self, area_kmq: float) -> int:
+        cont:int=-1 
+        densit:int=self.popolazione_iniziale/area_kmq
+        while densit < 1:
+            self.cresci()
+            cont+=1
+            densit:int=self.popolazione_iniziale/area_kmq
+        return cont 
+    
+
+class BufaloKlingon(Specie):
+    def __init__(self,  popolazione_iniziale: int, tasso_crescita: float):
+        super().__init__( "BufaloKlingon",popolazione_iniziale, tasso_crescita)
+    
+        
+
+
+
+class Elefante(Specie):
+    def __init__(self, popolazione_iniziale: int, tasso_crescita: float):
+        super().__init__("Elefante",popolazione_iniziale, tasso_crescita)
+        
+        
+
+
+            
+
+            
+
+
             
             
-            
-specie1=Specie("cazzoni",100,25)
-specie2=Specie("calzini",30,40)
+specie1=Specie("cazzoni",100,15)
+specie2=Specie("calzini",10,35)
 
 print(specie1.anni_per_superare(specie2))
+
+
+print(specie1.getDensita(1500))
 
 
             
