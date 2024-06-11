@@ -281,6 +281,20 @@ class Specie:
     def anni_per_superare(self, altra_specie: 'Specie') -> int:
         cont:int=0
         while cont <  1000:
+            self.popolazione_iniziale.cresci()
+            altra_specie.cresci()
+            cont+=1
+            if altra_specie.popolazione_iniziale > self.popolazione_iniziale:
+                return f"tra {cont} anni l'altra specie supererà quella attuale"
+            
+            
+            
+specie1=Specie("cazzoni",100,25)
+specie2=Specie("calzini",30,40)
+
+print(specie1.anni_per_superare(specie2))
+
+
             
             
 
