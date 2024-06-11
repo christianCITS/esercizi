@@ -268,7 +268,24 @@ Formule Matematiche:
         
     
 class Specie:
-    def __init__(self,nome:str,popolazione:int,tasso_crescita):
+    def __init__(self,nome:str,popolazione_iniziale:int,tasso_crescita:float):
+        self.nome:str=nome
+        self.popolazione_iniziale=popolazione_iniziale
+        self.tasso_crescita=tasso_crescita
+    
+
+    def cresci(self):
+        popolazione_aggiornata:int=self.popolazione_iniziale*(1+self.tasso_crescita/100)
+        return popolazione_aggiornata
+
+    def anni_per_superare(self, altra_specie: 'Specie') -> int:
+        cont:int=0
+        while cont <  1000:
+            
+            
+
+
+
 
         
 
