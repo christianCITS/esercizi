@@ -3,12 +3,12 @@ from dottore import Dottore
 
 class Fattura:
     def __init__(self,patient:list[Paziente],doctor:Dottore):
-        self.lista_pazienti:list[Paziente]=[]
         self.doctor:Dottore=doctor
         if doctor.isAValidDoctor()== True:
-            self.fatture:int=len(self.lista_pazienti)
             self.salary:int=0
-            self.lista_pazienti.append(patient)
+            self.lista_pazienti=[patient]
+            self.fatture:int=len(self.lista_pazienti)
+
         else:
             self.lista_pazienti=None
             self.doctor=None
@@ -51,11 +51,12 @@ paziente1=Paziente("LUisa","adfg","G14C0")
 paziente2=Paziente("Marina","qewtrqrr","M4r1")
 paziente3=Paziente("Giuseppa","sgfssds","G1US")
 paziente4=Paziente("Alfonsa","gkjhgkj","4lf0")
-fattura=Fattura([paziente1,paziente2,paziente3,paziente4],dottore1)
+fattura=Fattura([paziente1,paziente2,paziente3],dottore1)
 
 
+print(fattura.getFatture())
 
-
+fattura.addPatient(paziente4)
 
 
 
