@@ -16,10 +16,6 @@ class Fattura:
             self.salary=None
             print(f"Non è possibile creare la classe fattura poichè il dottore non è valido!")
 
-    def __str__(self) -> str:
-             return f"pazienti: {self.lista_pazienti}"
-            
-
     def getSalary(self):
         self.salary:int=self.doctor.getParcel()*len(self.lista_pazienti)
         return self.salary
