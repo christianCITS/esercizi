@@ -6,7 +6,7 @@ class Fattura:
         self.doctor:Dottore=doctor
         if doctor.isAValidDoctor()== True:
             self.salary:int=0
-            self.lista_pazienti=[patient]
+            self.lista_pazienti=patient
             self.fatture:int=len(self.lista_pazienti)
 
         else:
@@ -57,6 +57,12 @@ fattura=Fattura([paziente1,paziente2,paziente3],dottore1)
 print(fattura.getFatture())
 
 fattura.addPatient(paziente4)
+fattura.removePatient("G1US")
+print(fattura.getSalary())
+
+
+
+
 
 
 
