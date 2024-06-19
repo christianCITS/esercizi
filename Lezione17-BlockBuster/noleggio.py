@@ -29,6 +29,8 @@ class Noleggio:
                 film_noleggiati.append(film)
                 self.rented_film[clientID]=film_noleggiati
                 print(f"il cliente ha potuto noleggiare il film: {film.getTitle()}")
+                
+                
 
                 
 
