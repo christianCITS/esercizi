@@ -9,7 +9,6 @@ class Noleggio:
 
 
     def isAvaible(self,film:Film): 
-        for _ in self.film_list:
             if film in self.film_list:
                 print(f"il film scelto è disponibile: {film.getTitle()}")
                 return True
@@ -22,14 +21,13 @@ class Noleggio:
 
     def rentAmovie(self,film:Film,clientID:int):
         film_noleggiati:list[Film]=[]
-        for _ in self.film_list:
-            if film not in self.film_list:
-                print(f"Il film non è disponibile per il noleggio!: {film.getTitle()}")
-            else:
-                self.film_list.remove(film)
-                film_noleggiati.append(film)
-                self.rented_film[clientID]=film_noleggiati
-                print(f"il cliente {clientID} ha potuto noleggiare il film: {film.getTitle()}")
+        if film not in self.film_list:
+            print(f"Il film non è disponibile per il noleggio!: {film.getTitle()}")
+        else:
+            self.film_list.remove(film)
+            film_noleggiati.append(film)
+            self.rented_film[clientID]=film_noleggiati
+            print(f"il cliente {clientID} ha potuto noleggiare il film: {film.getTitle()}")
                 
 
 
