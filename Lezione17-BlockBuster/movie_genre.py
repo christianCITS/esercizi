@@ -2,11 +2,13 @@ from film import Film
 
 
 
+
 class Azione(Film):
     def __init__(self,codiceID: int, title: str):
         super().__init__(codiceID, title)
         self.__genere:str="Azione"
         self.__penale:float=3.0
+    
     
 
     def getGenere(self):
@@ -33,6 +35,7 @@ class Commedia(Film):
         super().__init__(codiceID, title)
         self.__genere:str="Commedia"
         self.__penale:float=2.5
+
     
 
     def getGenere(self):
@@ -58,7 +61,7 @@ class Drama(Film):
         super().__init__(codiceID, title)
         self.__genere:str="Drama"
         self.__penale:float=2.0
-    
+
 
     def getGenere(self):
         return self.__genere

@@ -3,6 +3,8 @@ class Film:
         self.__codiceID=codiceID
         self.__title=title
 
+
+
     
     def setID(self,id):
         if id != self.__codiceID:
@@ -30,10 +32,6 @@ class Film:
 
 
 
-
-film=Film(2423,"Non è un paese per vecchi")
-film1=Film(2323,"La grande bellezza")
-film2=Film(2323,"La grande bellezza")
 
 
 

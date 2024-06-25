@@ -37,46 +37,31 @@ class Noleggio:
 
     
     def giveBack(self,film:Film, clientID, days):
-        for fil in self.rented_film.items():
-            pass
-        
-            
+        for clienti in self.rented_film.keys():
+            if clientID == clienti:
+                self.rented_film[clientID].remove(film)
+                self.film_list.append(film)
+                penale=film.calcolaPenaleRitardo(days)
+                print(f"il cliente: {clientID} deve pagare per il film: {film.getTitle()}  {penale} euro di penale!")
 
- 
- 
- 
- 
-    #questo metodo consente di restituire un film noleggiato in negozio, ed ha come argomenti il film da restituire, 
-    # il codice ID del client che restituisce il film, il numero dei giorni in cui il cliente ha tenuto il film per se.  
-    # Il film da restituire deve essere rimosso dalla lista dei film noleggiati dal cliente con id clientID, e tale film, 
-    # deve essere riaggiunto alla lista dei film disponibili in negozio (film_list). Successivamente, 
-    # il metodo deve calcolare la penale che il cliente deve pagare utilizzando l'opposito metodo. 
-    # Stampare la penale che il cliente deve pagare: "Cliente: {clientID}! La penale da pagare per il film {titolo_film} 
-    # e' di {tot} euro!".
+
+    
+
+
+    def printMovies(self):
+        for film in self.film_list:
+            print(f"{film.getTitle()} - {film.getGenere()}")
 
 
 
 
+    def     printRentMovies(self,clientID):
+            for cliente in self.rented_film:
+                if cliente == clientID:
+                    print(f" I film noleggiati da {clientID} sono : {self.rented_film[clientID]}")
 
 
 
-                
-
-
-film1 =Azione(112,"Inception")
-film2 = Azione(111,"Interstellar")
-noleggio = Noleggio([film1,film2])
-print(noleggio.film_list)
-
-
-noleggio.rentAmovie(film1,112)
-noleggio.rentAmovie(film2,112)
-
-
-
-print(noleggio.rented_film)
-
-noleggio.giveBack(film1,112,3)
 
 
                 
