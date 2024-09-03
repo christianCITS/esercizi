@@ -5,11 +5,24 @@ sParola= input("Inserisci la parola da cercare")
 sOutDir= input("Inserisci la directory dove mettere i file trovati")
 
 
+
+
+
+def cercaParolaInNomeFile(file,sParola):
+            a=file.lower()
+            b=sParola.lower()
+            ret=a.find(b)
+            if ret >= 0:
+                return True
+            elif ret < 0:
+                return False
+
+
 for root,ListDir,ListFiles in os.walk(sRoot):
     print(f"Nella directory {root} ci sono {len(ListDir)} sottodirectory e {len(ListFiles)} file.")
     for file in ListFiles:
         print(f"Devo cercare {sParola} in {file}")
-        test=cercaParolaInNomeFile()
+        test=cercaParolaInNomeFile(file,sParola)
         if test== True:
             print(f"La parola {sParola} c'è nel file: {file}.")
         else:
@@ -22,14 +35,7 @@ for root,ListDir,ListFiles in os.walk(sRoot):
 
 
 
-        def cercaParolaInNomeFile(file,sParola):
-            a=file.lower()
-            b=sParola.lower()
-            ret=a.find(b)
-            if ret >= 0:
-                return True
-            elif ret < 0:
-                return False
+        
             
 
 
