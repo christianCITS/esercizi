@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Benvenuto in ANAZOM</h1>
+    <img src="STATIC/truffa-online-amo-pesca-carta-di-credito-pc-shutt.jpg" alt="Immagine di benvenuto" style="width:50%; height:auto;">
+
+<div>
+    <form action="{{ url_for('accedi') }}" method="get">
+        <button style="padding: 15px 40px; font-size: 18px;" type="submit">Accedi</button>
+    </form>
+                    
+        
+    <form action="{{ url_for('registrazione') }}" method="get">
+        <button style="padding: 15px 40px; font-size: 18px;" type="submit">Registrati</button>
+    </form>
+</div>
+</body>
+</html>
