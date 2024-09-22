@@ -44,7 +44,7 @@ INSERT INTO Persona (id, nome, cognome, posizione, stipendio) VALUES
 (2, 'Lorenzo', 'Derti', 'Professore Associato', 45000),
 (3, 'Isaia', 'Meloni', 'Professore Ordinario', 55000),
 (4, 'Marco', 'Sperti', 'Professore Associato', 40000),
-(5, 'Francisco', 'TITTI', 'Ricercatore', 32000);
+(5, 'Francisco', 'Titti', 'Ricercatore', 32000);
 
 
 INSERT INTO Progetto (id, nome, inizio, fine, budget) VALUES
