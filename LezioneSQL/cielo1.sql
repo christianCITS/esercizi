@@ -80,3 +80,68 @@ AND C.annoFondaz IS NOT NULL;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--query 9:
+SELECT codice,comp, partenza, arrivo
+FROM ArrPart, Aeroporto A1, Aeroporto A2, LuogoAeroporto L1, LuogoAeroporto L2
+WHERE ArrPart.partenza = A1.codice
+AND A1.codice = L1.aeroporto
+AND L1.citta = 'Roma'
+AND ArrPart.arrivo = A2.codice
+AND A2.codice = L2.aeroporto
+AND L2.citta = 'New York';
+
+
+
+
+
+
+
+
+
