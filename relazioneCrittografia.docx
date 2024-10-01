@@ -14,7 +14,7 @@ La chiave necessaria per criptare un messaggio da inviare ad una determinata per
  allo stesso modo se vogliamo ricevere un messaggio cifrato dobbiamo condividere la nostra chiave pubblica.
 per cifrare un messaggio ad un collega, una volta ricevuta la sua chiave pubblica importiamo  dalla libreria Crypto.Cipher , 
 PKCS1_OAEP e la utilizziamo per codificare il messaggio creando una funzione che prende come parametri il messaggio e la chiave pubblica del destinatario.
-con la seguente porzione di codice  facciamo uso della funzione encrypt() per criptare il messaggio con la chiave del destinatario: cipher = PKCS1_OAEP.new(pub_key)
+Con la seguente porzione di codice  facciamo uso della funzione encrypt() per criptare il messaggio con la chiave del destinatario: cipher = PKCS1_OAEP.new(pub_key)
 encrypted_message = cipher.encrypt(message.encode("utf-8")). Il parametro utf-8 indica un tipo di codifica di carattere unicode.
 Per decifrare un messaggio in arrivo da un collega  useremo la nostra chiave privata in aggiunta alla funzione decrypt() che a sua volta prenderà come parametro il messaggio criptato e 
 il relativo metodo di codifica in questo caso base64 e restituirà il messaggio in chiaro senza codifica.(cipher = PKCS1_OAEP.new(priv_key)
