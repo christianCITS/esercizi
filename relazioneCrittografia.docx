@@ -1,0 +1,63 @@
+Christian Cioeta
+
+
+
+
+Di seguito ecco esposti i passaggi necessari per scambiare messaggi criptati per poi decriptarli:
+La generazione delle chiavi avviene attraverso l'uso della libreria Crypto.PublicKey(from Crypto.PublicKey import RSA), 
+utilizzando la funzione import_key() si genera una chiave privata(key_pair=RSA.import_key(sPriv)) la quale presenta al suo
+ interno una porzione di stringa che rappresenta invece la chiave pubblica.
+per estrapolare questi dati utilizziamo la funzione public_key() assegnandola ad un altra variabile.
+In questo modo adesso abbiamo sia la nostra chiave pubblica che la privata(key_pair=RSA.import_key(sPriv)
+public_key= key_pair.public_key()).
+La chiave necessaria per criptare un messaggio da inviare ad una determinata persona è semplicemente la chiave pubblica del destinatario,
+ allo stesso modo se vogliamo ricevere un messaggio cifrato dobbiamo condividere la nostra chiave pubblica.
+per cifrare un messaggio ad un collega, una volta ricevuta la sua chiave pubblica importiamo  dalla libreria Crypto.Cipher , 
+PKCS1_OAEP e la utilizziamo per codificare il messaggio creando una funzione che prende come parametri il messaggio e la chiave pubblica del destinatario.
+con la seguente porzione di codice  facciamo uso della funzione encrypt() per criptare il messaggio con la chiave del destinatario: cipher = PKCS1_OAEP.new(pub_key)
+encrypted_message = cipher.encrypt(message.encode("utf-8")). Il parametro utf-8 indica un tipo di codifica di carattere unicode.
+Per decifrare un messaggio in arrivo da un collega  useremo la nostra chiave privata in aggiunta alla funzione decrypt() che a sua volta prenderà come parametro il messaggio criptato e 
+il relativo metodo di codifica in questo caso base64 e restituirà il messaggio in chiaro senza codifica.(cipher = PKCS1_OAEP.new(priv_key)
+    decrypted_message = cipher.decrypt(base64.b64decode(encrypted_message)))
+Se seguiamo correttamente i passaggi precedenti, avremo come risultato un codice simile a questo :
+
+
+
+
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+import base64
+
+key_pair=RSA.import_key(sPriv)
+public_key= key_pair.public_key()
+chiaveFra=RSA.import_key(pubFra)
+chiaveMat=RSA.import_key(PubMattia)
+chiaveFil=RSA.import_key(pubFil)
+
+
+def encrypt_message(message, pub_key):
+    cipher = PKCS1_OAEP.new(pub_key)
+    encrypted_message = cipher.encrypt(message.encode("utf-8"))
+    return base64.b64encode(encrypted_message).decode("utf-8")
+
+
+
+def decrypt_message(encrypted_message, priv_key):
+    cipher = PKCS1_OAEP.new(priv_key)
+    decrypted_message = cipher.decrypt(base64.b64decode(encrypted_message))
+    return decrypted_message.decode("utf-8")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
