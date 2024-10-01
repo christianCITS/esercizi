@@ -30,9 +30,7 @@ import base64
 
 key_pair=RSA.import_key(sPriv)
 public_key= key_pair.public_key()
-chiaveFra=RSA.import_key(pubFra)
-chiaveMat=RSA.import_key(PubMattia)
-chiaveFil=RSA.import_key(pubFil)
+
 
 
 def encrypt_message(message, pub_key):
