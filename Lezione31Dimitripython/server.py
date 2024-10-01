@@ -1,5 +1,8 @@
 from flask import Flask, json, request
+from myjson import JsonSerialize,JsonDeserialize
 
+
+sAnagrafe = "./anagrafe.json"
 api = Flask(__name__)
 
 listaCitt=[
@@ -46,12 +49,19 @@ def GestisciAddCittadino():
     print("Ricevuta chiamata " + content_type)
     if (content_type == 'application/json'):
         jsonReq = request.json
-        print(jsonReq)
-        #cittadini.append(jsonReq)
-        jsonResp = {"Esito":"200", "Msg":"ok"}
-        return json.dumps(jsonResp)
+        sCodiceFiscale = jsonReq["codice fiscale"]
+        anagrafe = JsonDeserialize(sAnagrafe)
+        if sCodiceFiscale not in anagrafe:
+            dNuovoCittadino = jsonReq
+            anagrafe[sCodiceFiscale] = dNuovoCittadino
+            JsonSerialize(anagrafe,sAnagrafe)
+            jsonResp = {"Esito":"000", "Msg":"ok"}
+            return json.dumps(jsonResp),200
+        else:
+            jsonResp = {"Esito":"001", "Msg":"Cittadino gia presente"}
+            return json.dumps(jsonResp),200
     else:
-        return 'Content-Type non supportato!'
+        return 'Content-Type not supported!',401
     
 
 
@@ -73,11 +83,24 @@ def ReadCittadino(cf):
 
 
 
-@api.route('/update_cittadino', methods=['POST'])
+@api.route('/update_cittadino', methods=['PUT'])
 def GestisciUpdateCittadino():
     content_type = request.headers.get('Content-Type')
-    if content_type == 'application/json':
-            codice_fiscale = request.json.get('codice_fiscale')
+    print("Ricevuta chiamata " + content_type)
+    if (content_type == 'application/json'):
+        jsonReq = request.json
+        sCodiceFiscale = jsonReq["codice fiscale"]
+        anagrafe = JsonDeserialize(sAnagrafe)
+        if sCodiceFiscale in anagrafe:
+            anagrafe[sCodiceFiscale] = jsonReq
+            JsonSerialize(anagrafe, sAnagrafe)
+            jsonResp = {"Esito": "000", "Msg": "Cittadino aggiornato"}
+            return json.dumps(jsonResp), 200
+        else:
+            jsonResp = {"Esito": "002", "Msg": "Cittadino non trovato"}
+            return json.dumps(jsonResp), 200
+    else:
+        return 'Content-Type not supported!', 401
              
     
     
