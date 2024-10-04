@@ -1,5 +1,5 @@
 from flask import Flask, json, request
-from myjson import JsonSerialize,JsonDeserialize
+from Lezione32Dimitripython.myjson import JsonSerialize,JsonDeserialize
 
 
 sAnagrafe = "./anagrafe.json"
