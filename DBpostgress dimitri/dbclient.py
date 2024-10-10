@@ -53,7 +53,7 @@ def write_in_db(cur,sql_insert):
     except (Exception, psycopg2.DatabaseError) as error:
     #except Exception as error:
         #print("Inizio:")
-        #print(error)
+        print(error)
         sError = str(error)
         #print("Fine:")
         if sError.startswith("duplicate key value "):
