@@ -5,9 +5,9 @@ base_url="https://127.0.0.1:8080"
 def GetDatiCittadino():
     nome = input("Inserisci nome: ")
     cognome = input("Inserisci cognome: ")
-    dataN = input("Inserisci data di nascita: ")
-    codF = input("Inserisci codice fiscale: ")
-    datiCittadino = {"nome":nome, "cognome": cognome, "data nascita":dataN, "codice fiscale":codF}
+    dataNascita = input("Inserisci data di nascita: ")
+    codiFisc= input("Inserisci codice fiscale: ")
+    datiCittadino = {"nome":nome, "cognome": cognome, "data nascita":dataNascita, "codice fiscale":codiFisc}
     return datiCittadino
 
 def GetCodiceFiscale():
@@ -65,7 +65,7 @@ while True:
                     elif sOper==2:
                         api_url=base_url+"/read_cittadino"
                         jsonDataRequest = GetCodiceFiscale()
-                        response = requests.post(api_url,json={"login":jsonDatiLogin,"codF":jsonDataRequest}, verify=False)
+                        response = requests.post(api_url,json={"login":jsonDatiLogin,"codiFisc":jsonDataRequest}, verify=False)
                         print(response.json())
                     elif sOper==3:
                         api_url=base_url+"/update_cittadino"
@@ -75,7 +75,7 @@ while True:
                     elif sOper==4:
                         api_url=base_url+"/delete_cittadino"
                         jsonDataRequest = GetCodiceFiscale()
-                        response = requests.post(api_url,json={"login":jsonDatiLogin,"codF":jsonDataRequest}, verify=False)
+                        response = requests.post(api_url,json={"login":jsonDatiLogin,"codiFisc":jsonDataRequest}, verify=False)
                         print(response.json())
                     elif sOper==5:
                         sys.exit()
@@ -87,7 +87,7 @@ while True:
                     print("2. Esci")
 
                     try:
-                        sOper = int(input("Cosa vuoi fare? "))
+                        sOper = int(input("Come vuoi procedere? "))
                     except ValueError:
                         print("Inserisci un numero valido!")
                         continue
