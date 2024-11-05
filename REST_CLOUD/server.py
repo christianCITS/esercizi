@@ -150,20 +150,20 @@ def login():
         """
         iStato = -1
         for key, value in request.json.items():
-            sQuery = f"select stato from utenti where username = '{key}' and password = '{value[0]}';"
+            sQuery = f"select privilegi from utenti where username = '{key}' and password = '{value[0]}';"
             print(sQuery)
             iNumRecord = db.read_in_db(mydb,sQuery)
             if iNumRecord == 1:
                 print("Login terminato correttamente")
                 lRecord = db.read_next_row(mydb)
-                iStato = 
-                return "True"
+                iStato = lRecord[1][0] 
+                return '{"Esito":"ok","Stato":' + str(iStato) + '}'
             elif iNumRecord == 0:
                 print("Credenziali errate")
-                return "False"
+                return '{"Esito":"error","Stato": -1}'
             elif iNumRecord <= -1:
                 print("Dati errati")
-                return "False"
+                return '{"Esito":"error"","Stato": -1}'
             else:
                 print("Attenzione: attacco in corso")
                 return "False"
@@ -179,7 +179,7 @@ def Registrazione():
         #dobbiamo verificare se lo username già sta nella tabella utenti
         #altrimenti facciamo la insert
         for key, value in request.json.items():
-            sQuery = f"insert into utenti(username,password,stato) values ('{key}','{value[0]}',{random.randint(0,1)})"
+            sQuery = f"insert into utenti(username,password,privilegi) values ('{key}','{value[0]}',{random.randint(0,1)})"
             print(sQuery)
             iRetValue = db.write_in_db(mydb,sQuery)
             if iRetValue == -2:
