@@ -22,19 +22,17 @@ conn = None
 
 
 def connect():
-    """ Connect to the PostgreSQL database server """
+
     print('Connecting to the PostgreSQL database 0...')
     global conn
     conn = None
     try:
-        # read connection parameters
+        
         params = config()
 
-        # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
 
-        # create a cursor
         cur = conn.cursor()
         return cur
 
@@ -47,15 +45,13 @@ def write_in_db(cur,sql_insert):
     global conn
     try:
         cur.execute(sql_insert)
-        # commit the changes to the database
+
         conn.commit()
         return 0
     except (Exception, psycopg2.DatabaseError) as error:
-    #except Exception as error:
-        #print("Inizio:")
-        #print(error)
+    
         sError = str(error)
-        #print("Fine:")
+      
         if sError.startswith("duplicate key value "):
             print("Duplicate key, vado avanti")
             conn.rollback()
