@@ -8,6 +8,12 @@ def GetDatiVeicolo():
     modello = input("Qual'è il modello? ")
     colore = input("Di che colore?")
     filiale = input("Qual'è la filiale ")
+
+def getDatiMoto():
+    modello = input("Qual'è il modello? ")
+    colore = input("Di che colore?")
+    filiale = input("Qual'è la filiale ")
+
     
 
 
@@ -15,8 +21,8 @@ while True:
     if not auth:
         print("Operazioni disponibili:")
         print("1. cerca automobile")
-        print("2. cerca motoveicolo")
-        print("3. Esci")
+        print("2. cerca motoveicolo") 
+        print("3. Esci") 
         
        
         
